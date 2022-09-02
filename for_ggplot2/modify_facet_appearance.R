@@ -57,3 +57,24 @@ modify_facet_appearance <- function(plot = NULL,
   # See: https://patchwork.data-imaginist.com/reference/wrap_ggplot_grob.html
   
 }
+
+### EXAMPLE:
+
+# library(dplyr)
+# library(ggplot2)
+# library(RColorBrewer)
+# 
+# pal.y <- brewer.pal(length(unique(mpg$drv))*2, "Paired")
+# pal.x <- brewer.pal(length(unique(mpg$cyl))*2, "Paired")
+# 
+# p <- {ggplot(mpg, aes(displ, cty)) + 
+#     geom_point() + 
+#     facet_grid(drv ~ cyl) +
+#     ggtitle("How to change colour of font in facet strip?")} %>%
+#   modify_facet_appearance(strip.background.x.fill = pal.x[seq(1, length(pal.x), 2)],
+#                           strip.background.x.col = pal.x[seq(2, length(pal.x), 2)],
+#                           strip.text.x.col = pal.x[seq(2, length(pal.x), 2)],
+#                           strip.background.y.fill = pal.y[seq(1, length(pal.y), 2)],
+#                           strip.background.y.col = pal.y[seq(2, length(pal.y), 2)],
+#                           strip.text.y.col = pal.y[seq(2, length(pal.y), 2)])
+# plot(p)
