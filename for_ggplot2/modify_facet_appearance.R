@@ -1,3 +1,8 @@
+# It would be nice if we could colour the facet strips and/or text with different colours each but ggplot2 does not support it. 
+# However, I found this: 
+# https://stackoverflow.com/questions/53455092/r-ggplot2-change-colour-of-font-and-background-in-facet-strip
+# and we can build a function based on it to make this possible.
+
 modify_facet_appearance <- function(plot = NULL,
                                     strip.background.x.fill = NULL, 
                                     strip.background.y.fill = NULL,
